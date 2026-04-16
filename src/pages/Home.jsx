@@ -1,3 +1,6 @@
+import friends from "../data/friends.json";
+import FriendCard from "../components/FriendCard";
+
 function Home() {
   return (
     <div className="bg-[#f5f7f6] min-h-screen py-16">
@@ -90,6 +93,29 @@ function Home() {
             </p>
           </div>
         </div>
+
+        {/* Friends Section */}
+        <div className="mt-16 max-w-6xl mx-auto">
+          <h2 className="text-xl font-semibold text-gray-800 mb-6">
+            Your Friends
+          </h2>
+
+          <div
+            className="
+            grid
+            grid-cols-1
+            sm:grid-cols-2
+            md:grid-cols-3
+            lg:grid-cols-4
+            gap-6
+          "
+          >
+            {friends.map((friend) => (
+              <FriendCard key={friend.id} friend={friend} />
+            ))}
+          </div>
+        </div>
+
       </div>
     </div>
   );
