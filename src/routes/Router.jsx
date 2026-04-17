@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
+import ScrollToTop from "../components/ScrollToTop";
 import Home from "../pages/Home";
 import Timeline from "../pages/Timeline";
 import Stats from "../pages/Stats";
@@ -9,7 +10,12 @@ import NotFound from "../pages/NotFound";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: (
+      <>
+        <ScrollToTop />
+        <App />
+      </>
+    ),
     errorElement: <NotFound />,
     children: [
       { path: "/", element: <Home /> },
