@@ -12,17 +12,19 @@ function FriendCard({ friend }) {
   return (
     <div
       onClick={() => navigate(`/friend/${friend.id}`)}
-      className="bg-white p-6 rounded-xl shadow cursor-pointer hover:shadow-lg transition text-center"
+      className="bg-white p-5 sm:p-6 rounded-xl shadow cursor-pointer hover:shadow-lg transition text-center"
     >
       {/* Image */}
       <img
         src={friend.picture}
         alt={friend.name}
-        className="w-16 h-16 rounded-full mx-auto mb-4 object-cover"
+        className="w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto mb-4 object-cover"
       />
 
       {/* Name */}
-      <h3 className="font-semibold text-gray-800">{friend.name}</h3>
+      <h3 className="font-semibold text-gray-800 text-base sm:text-lg">
+        {friend.name}
+      </h3>
 
       {/* Days */}
       <p className="text-sm text-gray-500 mt-1">

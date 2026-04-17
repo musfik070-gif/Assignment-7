@@ -11,7 +11,13 @@ function FriendDetails() {
   const friend = friends.find((f) => f.id === parseInt(id));
 
   if (!friend) {
-    return <div className="p-10 text-red-500">Friend not found</div>;
+    return (
+      <div className="min-h-screen bg-[#f5f7f6] px-4 py-12 flex items-center justify-center">
+        <div className="bg-white rounded-xl shadow px-6 py-8 text-red-500">
+          Friend not found
+        </div>
+      </div>
+    );
   }
 
   const getStatusColor = () => {
@@ -24,14 +30,14 @@ function FriendDetails() {
     <div className="bg-[#f5f7f6] min-h-screen py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* LEFT SIDE */}
-        <div className="bg-white p-6 rounded-xl shadow text-center">
+        <div className="bg-white p-5 sm:p-6 rounded-xl shadow text-center">
           <img
             src={friend.picture}
             alt={friend.name}
-            className="w-20 h-20 rounded-full mx-auto mb-4"
+            className="w-20 h-20 rounded-full mx-auto mb-4 object-cover"
           />
 
-          <h2 className="text-lg font-semibold">{friend.name}</h2>
+          <h2 className="text-lg sm:text-xl font-semibold">{friend.name}</h2>
 
           <div
             className={`mt-2 text-white text-xs px-3 py-1 rounded-full inline-block ${getStatusColor()}`}
@@ -92,7 +98,7 @@ function FriendDetails() {
           </div>
 
           {/* Goal */}
-          <div className="bg-white p-5 rounded-xl shadow flex justify-between items-center">
+          <div className="bg-white p-5 rounded-xl shadow flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <h3 className="font-semibold text-gray-800">Relationship Goal</h3>
               <p className="text-gray-500 text-sm">
@@ -100,7 +106,9 @@ function FriendDetails() {
               </p>
             </div>
 
-            <button className="border px-4 py-1 rounded">Edit</button>
+            <button className="border px-4 py-2 rounded w-full sm:w-auto">
+              Edit
+            </button>
           </div>
 
           {/* Quick Check-in */}

@@ -16,14 +16,14 @@ function Home() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center px-4">
         <p className="text-gray-500 text-lg">Loading friends...</p>
       </div>
     );
   }
 
   return (
-    <div className="bg-[#f5f7f6] min-h-screen py-16">
+    <div className="bg-[#f5f7f6] min-h-screen py-10 sm:py-12 lg:py-16">
       {/* Main Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Banner */}
@@ -38,7 +38,7 @@ function Home() {
             font-bold
             text-gray-800
             leading-[1.2]
-            max-w-[800px]
+            max-w-[900px]
           "
           >
             Friends to keep close in your life
@@ -66,6 +66,8 @@ function Home() {
             mt-6
             bg-green-700
             text-white
+            w-full
+            sm:w-auto
             px-6
             py-3
             rounded-lg
@@ -115,7 +117,7 @@ function Home() {
         </div>
 
         {/* Friends Section */}
-        <div className="mt-16 max-w-6xl mx-auto">
+        <div className="mt-12 sm:mt-16 max-w-6xl mx-auto">
           <h2 className="text-xl font-semibold text-gray-800 mb-6">
             Your Friends
           </h2>
@@ -135,7 +137,6 @@ function Home() {
             ))}
           </div>
         </div>
-
       </div>
     </div>
   );
