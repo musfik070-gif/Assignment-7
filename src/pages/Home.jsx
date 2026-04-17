@@ -41,7 +41,7 @@ function Home() {
             max-w-[900px]
           "
           >
-            Friends to keep close in your life
+            Friends to keep close in your life Musfik
           </h1>
 
           {/* Subtitle */}
