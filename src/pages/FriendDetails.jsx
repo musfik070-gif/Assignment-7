@@ -1,8 +1,12 @@
 import { useParams } from "react-router-dom";
 import friends from "../data/friends.json";
 
+import { useTimeline } from "../context/TimelineContext";
+import toast from "react-hot-toast";
+
 function FriendDetails() {
   const { id } = useParams();
+  const { addEntry } = useTimeline();
 
   const friend = friends.find((f) => f.id === parseInt(id));
 
@@ -104,11 +108,35 @@ function FriendDetails() {
             <h3 className="font-semibold mb-4">Quick Check-In</h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <button className="border rounded-lg py-4">📞 Call</button>
+              <button
+                onClick={() => {
+                  addEntry("Call", friend.name);
+                  toast.success("Call logged!");
+                }}
+                className="border rounded-lg py-4"
+              >
+                📞 Call
+              </button>
 
-              <button className="border rounded-lg py-4">💬 Text</button>
+              <button
+                onClick={() => {
+                  addEntry("Text", friend.name);
+                  toast.success("Text logged!");
+                }}
+                className="border rounded-lg py-4"
+              >
+                💬 Text
+              </button>
 
-              <button className="border rounded-lg py-4">🎥 Video</button>
+              <button
+                onClick={() => {
+                  addEntry("Video", friend.name);
+                  toast.success("Video logged!");
+                }}
+                className="border rounded-lg py-4"
+              >
+                🎥 Video
+              </button>
             </div>
           </div>
         </div>
