@@ -1,7 +1,27 @@
 import friends from "../data/friends.json";
 import FriendCard from "../components/FriendCard";
 
+import { useEffect, useState } from "react";
+
 function Home() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-gray-500 text-lg">Loading friends...</p>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-[#f5f7f6] min-h-screen py-16">
       {/* Main Container */}
