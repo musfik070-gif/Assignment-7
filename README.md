@@ -13,7 +13,7 @@ KeenKeeper is a modern web application designed to help users maintain and nurtu
 * React Icons
 * React Hot Toast
 
-## ✨ Key Features
+## Key Features
 
 ### 1. Friendship Dashboard
 
